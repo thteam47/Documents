@@ -1,0 +1,19 @@
+git -c "http.proxy=http://192.168.5.8:3128/" clone https://github.com/thteam47/Golang_BE_Server_Management.git
+
+git config --global http.proxy http://192.168.5.8:3128/
+export http_proxy=http://192.168.5.8:3128/
+
+npm config set proxy http.proxy http://192.168.5.8:3128/
+
+http_proxy="http://username:password@proxy-server-ip:8080/"
+
+
+export http_proxy=thaipv9:Thteam47@192.168.5.8:3128
+
+Acquire::http::Proxy "http://thaipv9:Thteam47@192.168.5.8:3128/";
+Acquire::http::Proxy "http://thaipv9:Thteam47@192.168.5.8:3128/";
+
+
+export http_proxy=http://DOMAIN\thaipv9:Thteam47@192.168.5.8:3128/
+
+export ftp_proxy=http://DOMAIN\thaipv9:Thteam47@192.168.5.8:3128/
