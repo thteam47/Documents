@@ -1,0 +1,42 @@
+
+
+curl -XPOST "https://api.authy.com/protected/json/users/new" \
+-H "X-Authy-API-Key: xD7PcUfK5IrM1l1wKEtIIZfGqgQshmY1" \
+--data-urlencode 'user[email]=thteam48@gmail.com' \
+--data-urlencode 'user[cellphone]=336426168' \
+--data-urlencode 'user[country_code]=84'
+
+
+curl -XPOST "https://api.authy.com/protected/json/users/512975624/secret" \
+-H "X-Authy-API-Key: xD7PcUfK5IrM1l1wKEtIIZfGqgQshmY1" \
+-d label="thaianh - tht7@gmail.com"
+
+curl -i "https://api.authy.com/protected/json/verify/350913/512949048" \
+   -H "X-Authy-API-Key: xD7PcUfK5IrM1l1wKEtIIZfGqgQshmY1"
+
+curl -i "https://api.authy.com/protected/json/call/512949048" \
+    -H "X-Authy-API-Key: xD7PcUfK5IrM1l1wKEtIIZfGqgQshmY1"
+
+
+curl "https://api.authy.com/protected/json/sms/512949048?action=logindd" \
+    -H "X-Authy-API-Key: xD7PcUfK5IrM1l1wKEtIIZfGqgQshmY1"
+
+
+curl "https://api.authy.com/protected/json/sms/512949048?force=true" \
+    -H "X-Authy-API-Key: xD7PcUfK5IrM1l1wKEtIIZfGqgQshmY1"
+
+curl -i "https://api.authy.com/protected/json/sms/512949048" \
+    -H "X-Authy-API-Key: xD7PcUfK5IrM1l1wKEtIIZfGqgQshmY1"
+
+curl "https://api.authy.com/onetouch/json/users/512949048/approval_requests" \
+  -H "X-Authy-API-Key: xD7PcUfK5IrM1l1wKEtIIZfGqgQshmY1" \
+  --data-urlencode message="Login requested for a CapTrade Bank account." \
+  --data-urlencode details[username]="Bill Smith" \
+  --data-urlencode details[location]="California, USA" \
+  --data-urlencode details[Account Number]="981266321" \
+  --data-urlencode hidden_details[transaction_num]="TR139872562346" \
+  --data-urlencode seconds_to_expire=120 \
+  --data-urlencode logos[][res]="default" \
+  --data-urlencode logos[][url]="https://example.com/logos/default.png" \
+  --data-urlencode logos[][res]="low" \
+  --data-urlencode logos[][url]="https://example.com/logos/low.png"

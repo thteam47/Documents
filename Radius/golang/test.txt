@@ -15,3 +15,50 @@ f33be5bc09fcb76fc2a052107a9e3b1d49ae254b
 
 
 2a810bf9e050df1cb89d995fafc25f44cf2988f0
+
+
+curl -X GET https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/users/f33be5bc09fcb76fc2a052107a9e3b1d49ae254b/token \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
+curl -X PUT https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/users/f33be5bc09fcb76fc2a052107a9e3b1d49ae254b/token \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"' \
+  -H 'Content-Length: 0'
+
+curl -X GET https://cloud.logintc.com/api/hardware \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
+
+curl -X POST https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/sessions \
+  -d '{"user" : {"username" : "thteam47"},  "attributes" : []}' \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
+curl -X POST https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/sessions \
+  -d '{"user" : {"username" : "thteam47"},  "attributes" : []}' \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
+curl -X GET https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/sessions/bd41f5b3d8cfe7b37fbae32d25615da64e440119 \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
+
+curl -X POST https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/sessions \
+  -d '{"user" : {"id" : "f33be5bc09fcb76fc2a052107a9e3b1d49ae254b"}, "otp" : "159109"}' \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
+
+curl -X POST https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/sessions \
+  -d '{"user" : {"id" : "f33be5bc09fcb76fc2a052107a9e3b1d49ae254b"}, "otp" : "841195"}' \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
+curl -X POST https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/sessions \
+  -d '{"user" : {"username" : "thteam47"}, "otp" : "718753"]}' \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
+
+curl -X POST https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/sessions \
+  -d '{"user" : {"id" : "f33be5bc09fcb76fc2a052107a9e3b1d49ae254b"}, "attributes" : []}' \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
+curl -X POST https://cloud.logintc.com/api/domains/5c6c2e4a9755ac64220ea7fe4bf110f4da45e2cd/users/f33be5bc09fcb76fc2a052107a9e3b1d49ae254b/otp \
+  -d '{"deliverableOTPType":"thaithteam47@gmail.com"}' \
+  -H 'Authorization: LoginTC key="5Bu2IUMhgYgNArfIQaiuCTUR9VokVL0p10p2hleMrpi9QeL9ye16fqzLqa1j0mvs"'
+
