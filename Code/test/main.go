@@ -16,7 +16,6 @@ import (
 type User struct {
 	Username string
 	Password string
-	Otp      string
 }
 
 const (
@@ -36,32 +35,17 @@ func postlogin(rw http.ResponseWriter, r *http.Request) {
 	user := User{
 		Username: r.FormValue("username"),
 		Password: r.FormValue("passw"),
-		Otp:      r.FormValue("otp"),
 	}
-	fmt.Println(user.Username)
-	fmt.Println(user.Password)
-	fmt.Println(user.Otp)
 	packet := radius.New(radius.CodeAccessRequest, []byte(key))
 	rfc2865.UserName_SetString(packet, user.Username)
+	rfc2865.UserPassword_SetString(packet, user.Password)
 
-	if user.Otp != "" {
-		fmt.Println(user.Otp)
-		fmt.Println(user.Password + user.Otp)
-		rfc2865.UserPassword_SetString(packet, user.Password)
-		rfc2865.CHAPChallenge_SetString(packet, user.Otp)
-	} else {
-		rfc2865.UserPassword_SetString(packet, user.Password)
-	}
-	//res, er := radius.
-	//radius.
 	response, err := radius.Exchange(context.Background(), packet, ipRadiusServer)
 
 	if err != nil {
 		log.Fatal(err)
 	}
 	var Result string
-
-	fmt.Println(response.Code)
 	if response.Code == radius.CodeAccessAccept {
 		Result = "Đăng nhập thành công"
 	} else {
