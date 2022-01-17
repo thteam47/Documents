@@ -20,7 +20,7 @@ type User struct {
 
 const (
 	key            = `123456`
-	ipRadiusServer = "192.168.3.104:1812"
+	ipRadiusServer = "192.168.3.128:9090"
 )
 
 func getlogin(rw http.ResponseWriter, r *http.Request) {
@@ -36,10 +36,22 @@ func postlogin(rw http.ResponseWriter, r *http.Request) {
 		Username: r.FormValue("username"),
 		Password: r.FormValue("passw"),
 	}
+<<<<<<< HEAD
+=======
+	fmt.Println(user.Username)
+	fmt.Println(user.Password)
+>>>>>>> 971846b0fa21010856e8758d0a851c1f5dc58b3f
 	packet := radius.New(radius.CodeAccessRequest, []byte(key))
 	rfc2865.UserName_SetString(packet, user.Username)
 	rfc2865.UserPassword_SetString(packet, user.Password)
 
+<<<<<<< HEAD
+=======
+		rfc2865.UserPassword_SetString(packet, user.Password)
+	
+	//res, er := radius.
+	//radius.
+>>>>>>> 971846b0fa21010856e8758d0a851c1f5dc58b3f
 	response, err := radius.Exchange(context.Background(), packet, ipRadiusServer)
 
 	if err != nil {
